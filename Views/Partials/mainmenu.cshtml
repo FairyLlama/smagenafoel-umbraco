@@ -1,0 +1,54 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.PublishedCache
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Cms.Core.Services.Navigation
+
+@inject IVariationContextAccessor VariationContextAccessor
+@inject IPublishedContentCache PublishedContentCache
+@inject IDocumentNavigationQueryService DocumentNavigationQueryService
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider PublishedUrlProvider
+@*
+    This snippet displays a list of links of the pages immediately under the top-most page in the content tree.
+    This is the home page for a standard website.
+    It also highlights the current active page/section in the navigation with the CSS class "current".
+*@
+
+@* @{
+    var selection = Model.Root(PublishedContentCache, DocumentNavigationQueryService).Children(VariationContextAccessor,
+    PublishedContentCache, DocumentNavigationQueryService).Where(x => x.IsVisible(PublishedValueFallback)).ToArray();
+} *@
+
+@{
+    var selection = Umbraco.ContentAtRoot().FirstOrDefault()
+        .Children()
+        .Where(x => x.IsVisible());
+}
+
+@* @if (selection?.Length > 0)
+{ *@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <div>
+                <li>
+                    <a href="/" class="spacing">
+                        <img src="@Url.Content("~/media/5qsl0s4j/logo2.png")" alt="" class="logo">
+                    </a>
+                </li>
+            </div>
+            @foreach (var item in selection)
+            {
+                <div class="middle spacing">
+                    <li class="@(item.IsAncestorOrSelf(Model) ? "current" : null)">
+                        <a href="@item.Url(PublishedUrlProvider)">@item.Name</a>
+                    </li>
+                </div>
+            }
+        </ul>
+    </div>
+</nav>
+@* } *@

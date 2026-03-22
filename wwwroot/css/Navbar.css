@@ -1,0 +1,17 @@
+.navbar {
+  background-color: var(--default-color) !important;
+
+  a {
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    font-size: x-large;
+  }
+
+  .spacing {
+    margin: auto 0 auto 1vw;
+  }
+
+  .logo {
+    max-height: 60px;
+  }
+}
