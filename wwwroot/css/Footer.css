@@ -1,0 +1,31 @@
+footer {
+  background-color: var(--default-color);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0 1vw;
+
+  .right-align {
+    margin-right: auto;
+    margin-left: 1vw;
+  }
+  .left-align {
+    margin-left: auto;
+    margin-right: 1vw;
+    text-align: right;
+  }
+  .vertical-line {
+    border: 2px solid #e2d94c;
+  }
+
+  p {
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    font-size: small;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
