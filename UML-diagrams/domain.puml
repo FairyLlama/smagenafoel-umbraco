@@ -1,0 +1,7 @@
+@startuml
+hide circle
+"Smagen af øl" --|> "Kunde"
+"Kunde"--|>"Booking"
+"Booking"--|>"Bekræftigelse"
+"Bekræftigelse"--|>"Billet"
+@enduml
