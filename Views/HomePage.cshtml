@@ -5,6 +5,11 @@
 	Layout = "master.cshtml";
 }
 
+<h1>@Model.Value("SiteTitle")</h1>
+<div>@Model.Value("MainContent")</div>
+<div>@Model.Value("Footer")</div>
+
+
 @* @{
 	var selection = Umbraco.ContentAtRoot().FirstOrDefault()
 		.Children()

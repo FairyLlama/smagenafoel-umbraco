@@ -1,0 +1,35 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "master.cshtml";
+}
+
+@using Umbraco.Cms.Core.Services
+@inject IContentService ContentService
+@{
+	// Create a variable for the GUID of the page you want to update
+	var guid = new Guid("32e60db4-1283-4caa-9645-f2153f9888ef");
+
+	// Get the page using the GUID you've defined
+	var content = ContentService.GetById(guid); // ID of your page
+
+	// Set the value of the property with alias 'pageTitle'
+	content.SetValue("contact", "PhoneNumber");
+
+	// Save the change
+	ContentService.Save(content);
+}
+
+@* 
+@{
+	// Perform an null-check on the field with alias 'pageTitle'
+	@if (!Model.HasValue(Model.PhoneNumber))
+	{
+		// Print the value of the field with alias 'pageTitle'
+		<p>@Model.PhoneNumber</p>
+	} *@
+}
+@* <p>@Model.Value("PhoneNumber")</p> *@
+<p>@Model.Value("Email")</p>
+<div>@Model.Value("TextBox")</div>

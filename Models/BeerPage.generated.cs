@@ -58,6 +58,14 @@ namespace Website.Models
 		public virtual string MainContent => this.Value<string>(_publishedValueFallback, "mainContent");
 
 		///<summary>
+		/// TestPicture
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("testPicture")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops TestPicture => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "testPicture");
+
+		///<summary>
 		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
