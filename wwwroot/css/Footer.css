@@ -18,7 +18,7 @@ footer {
     text-align: right;
   }
   .vertical-line {
-    border: 2px solid #e2d94c;
+    border: 2px solid var(--color-yellow);
   }
 
   p {

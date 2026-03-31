@@ -50,6 +50,22 @@ namespace Website.Models
 		// properties
 
 		///<summary>
+		/// Color - green
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("colorGreen")]
+		public virtual string ColorGreen => this.Value<string>(_publishedValueFallback, "colorGreen");
+
+		///<summary>
+		/// Color - yellow
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("colorYellow")]
+		public virtual string ColorYellow => this.Value<string>(_publishedValueFallback, "colorYellow");
+
+		///<summary>
 		/// Footer
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]

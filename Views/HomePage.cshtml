@@ -1,34 +1,18 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
 @{
 	Layout = "master.cshtml";
 }
+<!DOCTYPE html>
+<html>
 
-<h1>@Model.Value("SiteTitle")</h1>
-<div>@Model.Value("MainContent")</div>
-<div>@Model.Value("Footer")</div>
+<head>
+	<link rel="stylesheet" href="@Url.Content("~/css/Homepage.css")" />
+</head>
+
+@await Html.PartialAsync("header")
+
+</html>
 
 
-@* @{
-	var selection = Umbraco.ContentAtRoot().FirstOrDefault()
-		.Children()
-		.Where(x => x.IsVisible());
-} *@
 
-@* @if (selection.Length > 0)
-{
-	var root = Umbraco.ContentAtRoot().First();
-	var classname = root.IsAncestorOrSelf(Model) ? "current" : null;
-	<li class="navbar-header @(classname)">
-		<a href="@root.Url()"> @root.Name()
-		</a>
-	</li>
-} *@
-
-@* @foreach (var item in selection)
-{
-	<li class="nav-item">
-		<a class="nav-link” href="@item.Url()"> @item.Name </a>
-	</li>
-} *@

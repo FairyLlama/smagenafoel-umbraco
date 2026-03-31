@@ -1,0 +1,26 @@
+body {
+  width: 100%;
+  align-content: center;
+  h1 {
+    font-family: "Courier New", Courier, monospace;
+    color: var(--default-color);
+    font-size: 65pt;
+  }
+  .box {
+    border: 2px solid var(--color-yellow);
+    width: 50%;
+    margin: 3vh auto;
+    text-align: center;
+  }
+
+  .new-item-feed {
+    /* Til nyheder */
+  }
+  .event-feed {
+    /* Kommende events */
+  }
+
+  .facebook-feed {
+    /* Til facebook */
+  }
+}
