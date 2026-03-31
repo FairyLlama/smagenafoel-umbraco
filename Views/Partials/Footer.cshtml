@@ -6,8 +6,8 @@
 
     <div class="left-align">
         <p>Hærvejen 73, 6230 Rødekro</p>
-        <p>Mobil: +45 50 49 90 12</p>
-        <p>Email: smagenafoel@gmail.com</p>
+        <p>@Umbraco.GetDictionaryValue("Mobile")</p>
+        <p>E-mail: smagenafoel@gmail.com</p>
         <p>Heinrich Loff</p>
         <p>Beer Sommelier</p>
         <p>CVR.nr. 38 72 08 48</p>
@@ -18,12 +18,12 @@
     </div>
 
     <div class="right-align">
-        <p>Åbningstider</p>
-        <p>Mandag: 15.30-17.30</p>
-        <p>Tirsdag: LUKKET</p>
-        <p>Onsdag-Torsdag: 15.00-17.30</p>
-        <p>Fredag: 14.00-17.30</p>
-        <p>Lørdag: 10.00-14.00</p>
-        <p>Søndag: LUKKET</p>
+        <p>@Umbraco.GetDictionaryValue("OpeningHours")</p>
+        <p>@Umbraco.GetDictionaryValue("Monday")</p>
+        <p>@Umbraco.GetDictionaryValue("Tuesday")</p>
+        <p>@Umbraco.GetDictionaryValue("Wednesday-thursday")</p>
+        <p>@Umbraco.GetDictionaryValue("Friday")</p>
+        <p>@Umbraco.GetDictionaryValue("Saturday")</p>
+        <p>@Umbraco.GetDictionaryValue("Sunday")</p>
     </div>
 </footer>
