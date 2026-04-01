@@ -18,14 +18,14 @@ using Umbraco.Extensions;
 
 namespace Website.Models
 {
-	/// <summary>Beer</summary>
-	[PublishedModel("beer")]
-	public partial class Beer : PublishedContentModel, IMaster
+	/// <summary>Site Settings</summary>
+	[PublishedModel("siteSettings")]
+	public partial class SiteSettings : PublishedContentModel, IFooterProperties, IMainNavigationProperties, ISiteSettingsProperties, IVisibilityProperties
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
-		public new const string ModelTypeAlias = "beer";
+		public new const string ModelTypeAlias = "siteSettings";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
@@ -34,14 +34,14 @@ namespace Website.Models
 			=> PublishedModelUtility.GetModelContentType(contentTypeCache, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<Beer, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<SiteSettings, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(contentTypeCache), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public Beer(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public SiteSettings(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -50,35 +50,34 @@ namespace Website.Models
 		// properties
 
 		///<summary>
-		/// MainContent
+		/// Footer Content: Create the footer content using the block grid editor
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("mainContent")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString MainContent => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "mainContent");
+		[ImplementPropertyType("footerContent")]
+		public virtual string FooterContent => global::Website.Models.FooterProperties.GetFooterContent(this, _publishedValueFallback);
 
 		///<summary>
-		/// Title
+		/// Main Navigation: Enter the main navigation items for this website
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("title")]
-		public virtual string Title => this.Value<string>(_publishedValueFallback, "title");
+		[ImplementPropertyType("mainNavigation")]
+		public virtual string MainNavigation => global::Website.Models.MainNavigationProperties.GetMainNavigation(this, _publishedValueFallback);
 
 		///<summary>
-		/// MetaDescription
+		/// Site Name: Enter the name of the site. This will appear in the browser title and in the main top left logo for the site
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("metaDescription")]
-		public virtual string MetaDescription => global::Website.Models.Master.GetMetaDescription(this, _publishedValueFallback);
+		[ImplementPropertyType("siteName")]
+		public virtual string SiteName => global::Website.Models.SiteSettingsProperties.GetSiteName(this, _publishedValueFallback);
 
 		///<summary>
-		/// MetaKeywords
+		/// Hide: Set this to true if you want to hide this page from search results and list pages
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("metaKeywords")]
-		public virtual string MetaKeywords => global::Website.Models.Master.GetMetaKeywords(this, _publishedValueFallback);
+		[ImplementPropertyType("umbracoNaviHide")]
+		public virtual bool UmbracoNaviHide => global::Website.Models.VisibilityProperties.GetUmbracoNaviHide(this, _publishedValueFallback);
 	}
 }

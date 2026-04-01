@@ -1,0 +1,16 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "master.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="@Url.Content("~/css/Homepage.css")" />
+</head>
+
+@await Html.PartialAsync("header")
+
+</html>

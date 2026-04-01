@@ -18,14 +18,24 @@ using Umbraco.Extensions;
 
 namespace Website.Models
 {
-	/// <summary>BeerPage</summary>
-	[PublishedModel("beerPage")]
-	public partial class BeerPage : PublishedContentModel
+	// Mixin Content Type with alias "siteSettingsProperties"
+	/// <summary>Site Settings Properties</summary>
+	public partial interface ISiteSettingsProperties : IPublishedElement
+	{
+		/// <summary>Site Name</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string SiteName { get; }
+	}
+
+	/// <summary>Site Settings Properties</summary>
+	[PublishedModel("siteSettingsProperties")]
+	public partial class SiteSettingsProperties : PublishedElementModel, ISiteSettingsProperties
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
-		public new const string ModelTypeAlias = "beerPage";
+		public new const string ModelTypeAlias = "siteSettingsProperties";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
@@ -34,14 +44,14 @@ namespace Website.Models
 			=> PublishedModelUtility.GetModelContentType(contentTypeCache, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<BeerPage, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<SiteSettingsProperties, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(contentTypeCache), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public BeerPage(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public SiteSettingsProperties(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -50,27 +60,16 @@ namespace Website.Models
 		// properties
 
 		///<summary>
-		/// MainContent
+		/// Site Name: Enter the name of the site. This will appear in the browser title and in the main top left logo for the site
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("mainContent")]
-		public virtual string MainContent => this.Value<string>(_publishedValueFallback, "mainContent");
+		[ImplementPropertyType("siteName")]
+		public virtual string SiteName => GetSiteName(this, _publishedValueFallback);
 
-		///<summary>
-		/// TestPicture
-		///</summary>
+		/// <summary>Static getter for Site Name</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("testPicture")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops TestPicture => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "testPicture");
-
-		///<summary>
-		/// Title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("title")]
-		public virtual string Title => this.Value<string>(_publishedValueFallback, "title");
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetSiteName(ISiteSettingsProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "siteName");
 	}
 }
