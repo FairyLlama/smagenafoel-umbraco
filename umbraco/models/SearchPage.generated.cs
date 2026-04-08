@@ -16,16 +16,16 @@ using Umbraco.Cms.Infrastructure.ModelsBuilder;
 using Umbraco.Cms.Core;
 using Umbraco.Extensions;
 
-namespace Website.Models
+namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Home Page</summary>
-	[PublishedModel("homePage")]
-	public partial class HomePage : PublishedContentModel, IContentProperties, IHeaderProperties, ISeoProperties, ITaggingProperties, IVisibilityProperties
+	/// <summary>Search Page</summary>
+	[PublishedModel("searchPage")]
+	public partial class SearchPage : PublishedContentModel, ISeoProperties, ITaggingProperties, IVisibilityProperties
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
-		public new const string ModelTypeAlias = "homePage";
+		public new const string ModelTypeAlias = "searchPage";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
@@ -34,14 +34,14 @@ namespace Website.Models
 			=> PublishedModelUtility.GetModelContentType(contentTypeCache, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<HomePage, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<SearchPage, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(contentTypeCache), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public HomePage(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public SearchPage(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -50,34 +50,18 @@ namespace Website.Models
 		// properties
 
 		///<summary>
-		/// Main Content: Use this property for build up the content for the page
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("mainContent")]
-		public virtual string MainContent => global::Website.Models.ContentProperties.GetMainContent(this, _publishedValueFallback);
-
-		///<summary>
-		/// Header Content: Enter the content for the header
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("headerContent")]
-		public virtual string HeaderContent => global::Website.Models.HeaderProperties.GetHeaderContent(this, _publishedValueFallback);
-
-		///<summary>
 		/// Is Followable: Set this to true if you want tobots to be able to follow this page
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		[ImplementPropertyType("isFollowable")]
-		public virtual bool IsFollowable => global::Website.Models.SeoProperties.GetIsFollowable(this, _publishedValueFallback);
+		public virtual bool IsFollowable => global::Umbraco.Cms.Web.Common.PublishedModels.SeoProperties.GetIsFollowable(this, _publishedValueFallback);
 
 		///<summary>
 		/// Is indexable: Set this to true if you want robots to be able index this page
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		[ImplementPropertyType("isIndexable")]
-		public virtual bool IsIndexable => global::Website.Models.SeoProperties.GetIsIndexable(this, _publishedValueFallback);
+		public virtual bool IsIndexable => global::Umbraco.Cms.Web.Common.PublishedModels.SeoProperties.GetIsIndexable(this, _publishedValueFallback);
 
 		///<summary>
 		/// Meta Description: Enter the meta description for this page
@@ -85,7 +69,7 @@ namespace Website.Models
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("metaDescription")]
-		public virtual string MetaDescription => global::Website.Models.SeoProperties.GetMetaDescription(this, _publishedValueFallback);
+		public virtual string MetaDescription => global::Umbraco.Cms.Web.Common.PublishedModels.SeoProperties.GetMetaDescription(this, _publishedValueFallback);
 
 		///<summary>
 		/// Meta Title: Enter the meta title for this page. If this is blank the name will be used
@@ -93,7 +77,7 @@ namespace Website.Models
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("metaTitle")]
-		public virtual string MetaTitle => global::Website.Models.SeoProperties.GetMetaTitle(this, _publishedValueFallback);
+		public virtual string MetaTitle => global::Umbraco.Cms.Web.Common.PublishedModels.SeoProperties.GetMetaTitle(this, _publishedValueFallback);
 
 		///<summary>
 		/// Page Tags: Choose the tags for this page
@@ -101,13 +85,13 @@ namespace Website.Models
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("pageTags")]
-		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent> PageTags => global::Website.Models.TaggingProperties.GetPageTags(this, _publishedValueFallback);
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent> PageTags => global::Umbraco.Cms.Web.Common.PublishedModels.TaggingProperties.GetPageTags(this, _publishedValueFallback);
 
 		///<summary>
 		/// Hide: Set this to true if you want to hide this page from search results and list pages
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		[ImplementPropertyType("umbracoNaviHide")]
-		public virtual bool UmbracoNaviHide => global::Website.Models.VisibilityProperties.GetUmbracoNaviHide(this, _publishedValueFallback);
+		public virtual bool UmbracoNaviHide => global::Umbraco.Cms.Web.Common.PublishedModels.VisibilityProperties.GetUmbracoNaviHide(this, _publishedValueFallback);
 	}
 }

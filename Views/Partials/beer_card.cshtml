@@ -1,0 +1,27 @@
+﻿@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.PublishedCache
+@using Umbraco.Cms.Core.Models
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ContentPage>
+@{
+    @* var siteSection = Model.AncestorOrSelf(2);
+    var selection = siteSection.Children.Where(x => x.IsVisible()); *@
+    @* var image = Model.Value<IPublishedContent>("mainImage"); *@
+}
+<div class="card-container">
+    @foreach (var item in selection)
+    {
+        <div class="beer-card">
+            <p>@item.mainImage</p>
+            <p> @item.Value("headerContent") </p>
+
+        </div>
+    }
+</div>
+
+
+@* <div class="beer-card">
+</div>
+<div class="beer-card">
+</div>
+<div class="beer-card">
+</div> *@

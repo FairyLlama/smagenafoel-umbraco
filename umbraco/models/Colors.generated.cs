@@ -16,26 +16,31 @@ using Umbraco.Cms.Infrastructure.ModelsBuilder;
 using Umbraco.Cms.Core;
 using Umbraco.Extensions;
 
-namespace Website.Models
+namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	// Mixin Content Type with alias "taggingProperties"
-	/// <summary>Tagging Properties</summary>
-	public partial interface ITaggingProperties : IPublishedElement
+	// Mixin Content Type with alias "colors"
+	/// <summary>Colors</summary>
+	public partial interface IColors : IPublishedElement
 	{
-		/// <summary>Page Tags</summary>
+		/// <summary>Color Green</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent> PageTags { get; }
+		string ColorGreen { get; }
+
+		/// <summary>Color Yellow</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string ColorYellow { get; }
 	}
 
-	/// <summary>Tagging Properties</summary>
-	[PublishedModel("taggingProperties")]
-	public partial class TaggingProperties : PublishedElementModel, ITaggingProperties
+	/// <summary>Colors</summary>
+	[PublishedModel("colors")]
+	public partial class Colors : PublishedElementModel, IColors
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
-		public new const string ModelTypeAlias = "taggingProperties";
+		public new const string ModelTypeAlias = "colors";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
@@ -44,14 +49,14 @@ namespace Website.Models
 			=> PublishedModelUtility.GetModelContentType(contentTypeCache, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<TaggingProperties, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<Colors, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(contentTypeCache), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public TaggingProperties(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
+		public Colors(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -60,16 +65,29 @@ namespace Website.Models
 		// properties
 
 		///<summary>
-		/// Page Tags: Choose the tags for this page
+		/// Color Green
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("pageTags")]
-		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent> PageTags => GetPageTags(this, _publishedValueFallback);
+		[ImplementPropertyType("colorGreen")]
+		public virtual string ColorGreen => GetColorGreen(this, _publishedValueFallback);
 
-		/// <summary>Static getter for Page Tags</summary>
+		/// <summary>Static getter for Color Green</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent> GetPageTags(ITaggingProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent>>(publishedValueFallback, "pageTags");
+		public static string GetColorGreen(IColors that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "colorGreen");
+
+		///<summary>
+		/// Color Yellow
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("colorYellow")]
+		public virtual string ColorYellow => GetColorYellow(this, _publishedValueFallback);
+
+		/// <summary>Static getter for Color Yellow</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetColorYellow(IColors that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "colorYellow");
 	}
 }

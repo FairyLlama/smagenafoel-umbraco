@@ -1,12 +1,14 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper umbracoHelper
 
 @{
 	Layout = null;
 }
 
 <head>
-<style>:root{
+<style>
+:root{
     --default-color: @Model.Value("colorGreen");
 	--color-yellow: @Model.Value("colorYellow");
 }
@@ -14,12 +16,11 @@
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
 		  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="@Url.Content("~/css/Global.css")"/>
 	<link rel="stylesheet" href="@Url.Content("~/css/Navbar.css")"/>
 	<link rel="stylesheet" href="@Url.Content("~/css/Footer.css")"/>
+	<link rel="stylesheet" href="@Url.Content("~/css/Beer_card.css")"/>
 
 </head>
-
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 		crossorigin="anonymous"></script>
@@ -30,6 +31,8 @@
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
 
+
+
 @Html.Partial("navbar")
 
 
@@ -37,3 +40,4 @@
 
 
 @Html.Partial("footer")
+
