@@ -1,0 +1,20 @@
+﻿@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.BeerPage>
+@inject Umbraco.Cms.Web.Common.UmbracoHelper umbracoHelper
+@{
+	Layout = "master.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="@Url.Content("~/css/Homepage.css")" />
+</head>
+
+@await Html.PartialAsync("header")
+@await Html.PartialAsync("beer_card")
+
+
+
+</html>

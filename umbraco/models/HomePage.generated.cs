@@ -74,6 +74,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string BeerBrewery => global::Umbraco.Cms.Web.Common.PublishedModels.ContentProperties.GetBeerBrewery(this, _publishedValueFallback);
 
 		///<summary>
+		/// BeerIBU
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("beerIbu")]
+		public virtual string BeerIbu => global::Umbraco.Cms.Web.Common.PublishedModels.ContentProperties.GetBeerIbu(this, _publishedValueFallback);
+
+		///<summary>
 		/// BeerProcent
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
@@ -112,6 +120,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("mainImage")]
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops MainImage => global::Umbraco.Cms.Web.Common.PublishedModels.ContentProperties.GetMainImage(this, _publishedValueFallback);
+
+		///<summary>
+		/// Summary
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("summary")]
+		public virtual string Summary => global::Umbraco.Cms.Web.Common.PublishedModels.ContentProperties.GetSummary(this, _publishedValueFallback);
 
 		///<summary>
 		/// Header Content: Enter the content for the header

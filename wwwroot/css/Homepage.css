@@ -7,7 +7,7 @@ body {
     font-size: 65pt;
   }
   .box {
-    border: 2px solid;
+    border: 2px solid var(--color-yellow);
     width: 50%;
     margin: 3vh auto;
     text-align: center;

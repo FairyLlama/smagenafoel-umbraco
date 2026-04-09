@@ -18,14 +18,14 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Content Entry</summary>
-	[PublishedModel("contentEntry")]
-	public partial class ContentEntry : PublishedContentModel, IColors, IContentProperties, IHeaderProperties, ISeoProperties, ITaggingProperties, IVisibilityProperties
+	/// <summary>Beer Page</summary>
+	[PublishedModel("beerPage")]
+	public partial class BeerPage : PublishedContentModel, IColors, IContentProperties, IHeaderProperties, ISeoProperties, ITaggingProperties, IVisibilityProperties
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
-		public new const string ModelTypeAlias = "contentEntry";
+		public new const string ModelTypeAlias = "beerPage";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
@@ -34,14 +34,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(contentTypeCache, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<ContentEntry, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<BeerPage, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(contentTypeCache), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public ContentEntry(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public BeerPage(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -72,6 +72,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("beerBrewery")]
 		public virtual string BeerBrewery => global::Umbraco.Cms.Web.Common.PublishedModels.ContentProperties.GetBeerBrewery(this, _publishedValueFallback);
+
+		///<summary>
+		/// BeerIBU
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("beerIbu")]
+		public virtual string BeerIbu => global::Umbraco.Cms.Web.Common.PublishedModels.ContentProperties.GetBeerIbu(this, _publishedValueFallback);
 
 		///<summary>
 		/// BeerProcent
@@ -112,6 +120,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("mainImage")]
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops MainImage => global::Umbraco.Cms.Web.Common.PublishedModels.ContentProperties.GetMainImage(this, _publishedValueFallback);
+
+		///<summary>
+		/// Summary
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("summary")]
+		public virtual string Summary => global::Umbraco.Cms.Web.Common.PublishedModels.ContentProperties.GetSummary(this, _publishedValueFallback);
 
 		///<summary>
 		/// Header Content: Enter the content for the header

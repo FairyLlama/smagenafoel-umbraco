@@ -1,12 +1,30 @@
 .card-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  p {
-    font-family: "Courier New", Courier, monospace;
-  }
+
   .beer-card {
     border: solid 2px var(--color-yellow);
     margin: 1vh 1vw;
     text-align: center;
+    .beer-title {
+      font-family: "Courier New", Courier, monospace;
+      color: var(--default-color);
+      font-weight: 800;
+      font-size: 15pt;
+      margin-bottom: 0;
+      text-decoration: underline var(--color-yellow);
+    }
+  }
+  .beer-tag {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 11pt;
+    margin-bottom: 0;
+    opacity: 45%;
+    color: var(--default-color);
+  }
+  .beer-sum {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12pt;
+    margin-bottom: 0;
   }
 }

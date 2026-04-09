@@ -1,0 +1,12 @@
+﻿@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.PublishedCache
+@using Umbraco.Cms.Core.Models
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.BeerEntry>
+
+<div class="box">
+    <div class="beer-entry">
+        <p>Øl type: @Model.BeerType</p>
+        <p>Procenter: @Model.BeerProcent%</p>
+        
+    </div>
+</div>

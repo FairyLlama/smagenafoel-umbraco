@@ -27,6 +27,11 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		string BeerBrewery { get; }
 
+		/// <summary>BeerIBU</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string BeerIbu { get; }
+
 		/// <summary>BeerProcent</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -51,6 +56,11 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		global::Umbraco.Cms.Core.Models.MediaWithCrops MainImage { get; }
+
+		/// <summary>Summary</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string Summary { get; }
 	}
 
 	/// <summary>Content Properties</summary>
@@ -96,6 +106,19 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		public static string GetBeerBrewery(IContentProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "beerBrewery");
+
+		///<summary>
+		/// BeerIBU
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("beerIbu")]
+		public virtual string BeerIbu => GetBeerIbu(this, _publishedValueFallback);
+
+		/// <summary>Static getter for BeerIBU</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetBeerIbu(IContentProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "beerIbu");
 
 		///<summary>
 		/// BeerProcent
@@ -161,5 +184,18 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		public static global::Umbraco.Cms.Core.Models.MediaWithCrops GetMainImage(IContentProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(publishedValueFallback, "mainImage");
+
+		///<summary>
+		/// Summary
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("summary")]
+		public virtual string Summary => GetSummary(this, _publishedValueFallback);
+
+		/// <summary>Static getter for Summary</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetSummary(IContentProperties that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "summary");
 	}
 }
