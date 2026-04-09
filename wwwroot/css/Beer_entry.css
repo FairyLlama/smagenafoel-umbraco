@@ -1,6 +1,31 @@
 .beer-entry {
-  p {
-    font-family: "Courier New", Courier, monospace;
-    margin-bottom: 0;
-  }
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 0;
+  color: var(--default-color);
+  transform: translateX(120%);
+  max-width: 40%;
+}
+
+.beer-box {
+  border: 2px solid var(--color-yellow);
+  width: 15%;
+  margin: 3vh auto;
+  text-align: center;
+  transform: translateX(5.5vw);
+  max-width: 40%;
+}
+
+.beer-information {
+  font-family: "Courier New", Courier, monospace;
+  color: var(--default-color);
+}
+
+.beer-image {
+  max-width: 450px;
+  position: absolute;
+  transform: translateX(80%);
+  top: 27vh;
+}
+p {
+  margin-bottom: 0;
 }

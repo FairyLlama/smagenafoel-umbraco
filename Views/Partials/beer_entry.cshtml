@@ -3,10 +3,21 @@
 @using Umbraco.Cms.Core.Models
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.BeerEntry>
 
-<div class="box">
-    <div class="beer-entry">
+@{
+    var conditional_class = Model.BeerIbu.Equals("") ? "none" : "block";
+}
+
+<div class="beer-entry">
+    <p>@Model.MainContent</p>
+</div>
+
+<div class="beer-box">
+    <div class="beer-information">
         <p>Øl type: @Model.BeerType</p>
         <p>Procenter: @Model.BeerProcent%</p>
-        
+        <p>Størrelse: @Model.BeerSize ml</p>
+        <p style="display: @conditional_class">Bitterhed: @Model.BeerIbu</p>
+        <p>Bryggeri: @Model.BeerBrewery</p>
     </div>
 </div>
+<img class="beer-image" src="@Model.MainImage.Url()" />
