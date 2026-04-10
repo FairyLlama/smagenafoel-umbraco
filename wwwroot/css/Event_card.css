@@ -1,12 +1,12 @@
-.card-container {
+.event-card-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
-  .beer-card {
+  .event-card {
     border: solid 2px var(--color-yellow);
     margin: 1vh 1vw;
     text-align: center;
-    .beer-title {
+    .event-title {
       font-family: "Courier New", Courier, monospace;
       color: var(--default-color);
       font-weight: 800;
@@ -15,20 +15,20 @@
       text-decoration: underline var(--color-yellow);
     }
   }
-  .beer-tag {
+  .event-tag {
     font-family: "Courier New", Courier, monospace;
     font-size: 11pt;
     margin-bottom: 0;
     opacity: 45%;
     color: var(--default-color);
   }
-  .beer-sum {
+  .event-sum {
     font-family: "Courier New", Courier, monospace;
     font-size: 12pt;
     margin-bottom: 0;
   }
 }
-.beer-toggle {
+.event-toggle {
   text-align: center;
   font-family: "Courier New", Courier, monospace;
   font-size: 11pt;

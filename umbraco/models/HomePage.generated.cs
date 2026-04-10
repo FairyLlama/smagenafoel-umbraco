@@ -66,46 +66,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string ColorYellow => global::Umbraco.Cms.Web.Common.PublishedModels.Colors.GetColorYellow(this, _publishedValueFallback);
 
 		///<summary>
-		/// BeerBrewery
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("beerBrewery")]
-		public virtual string BeerBrewery => global::Umbraco.Cms.Web.Common.PublishedModels.ContentProperties.GetBeerBrewery(this, _publishedValueFallback);
-
-		///<summary>
-		/// BeerIBU
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("beerIbu")]
-		public virtual string BeerIbu => global::Umbraco.Cms.Web.Common.PublishedModels.ContentProperties.GetBeerIbu(this, _publishedValueFallback);
-
-		///<summary>
-		/// BeerProcent
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("beerProcent")]
-		public virtual string BeerProcent => global::Umbraco.Cms.Web.Common.PublishedModels.ContentProperties.GetBeerProcent(this, _publishedValueFallback);
-
-		///<summary>
-		/// BeerSize
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("beerSize")]
-		public virtual string BeerSize => global::Umbraco.Cms.Web.Common.PublishedModels.ContentProperties.GetBeerSize(this, _publishedValueFallback);
-
-		///<summary>
-		/// BeerType
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("beerType")]
-		public virtual string BeerType => global::Umbraco.Cms.Web.Common.PublishedModels.ContentProperties.GetBeerType(this, _publishedValueFallback);
-
-		///<summary>
 		/// Main Content: Use this property for build up the content for the page
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]

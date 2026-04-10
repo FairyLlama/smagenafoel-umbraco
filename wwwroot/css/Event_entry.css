@@ -1,0 +1,31 @@
+.event-entry {
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 0;
+  color: var(--default-color);
+  transform: translateX(120%);
+  max-width: 40%;
+}
+
+.event-box {
+  border: 2px solid var(--color-yellow);
+  width: 15%;
+  margin: 3vh auto;
+  text-align: center;
+  transform: translateX(5.5vw);
+  max-width: 40%;
+}
+
+.event-information {
+  font-family: "Courier New", Courier, monospace;
+  color: var(--default-color);
+}
+
+.event-image {
+  max-width: 450px;
+  position: absolute;
+  transform: translateX(80%);
+  top: 27vh;
+}
+p {
+  margin-bottom: 0;
+}

@@ -1,0 +1,66 @@
+﻿@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.PublishedCache
+@using Umbraco.Cms.Core.Models
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.EventPage>
+@inject ITagQuery _tagQuery;
+
+
+@{
+    var events = Model.Children<ContentModels.EventEntry>();
+    @* var allContentTags = _tagQuery.GetAllContentTags(); *@
+}
+
+@* <div class="event-toggle">
+    <span class="clickable" onclick="clearSelections()"> Everything </span> |
+    @foreach (var tag in allContentTags)
+    {
+        string passParam = "'" + tag.Text + "'";
+        <span class="clickable" onclick="toggleEventItems(@passParam)"> @tag.Text | </span>
+    }
+</div> *@
+
+
+<div class="event-card-container">
+    @foreach (var item in events)
+    {
+        <div class="event-card">
+            <a href="@item.Url()">
+                <img src="@Url.GetCropUrl(item.MainImage, "Thumbnail")" />
+            </a>
+
+
+            <p class="event-title"> @item.HeaderContent </p>
+            <p class="event-sum">@item.Summary</p>
+            @* <p class="event-tag" data-cats="@String.Join(" ", item.Categories)"> @String.Join(" | ", item.Categories)
+        </p> *@
+        </div>
+    }
+
+</div>
+
+
+
+@* 
+<script type="text/javascript">
+    const toggleEventItems = (tag) => {
+        console.log("blog item toggle for " + tag);
+        let targets = document.querySelectorAll('[data-cats]');
+
+        targets.forEach(t => {
+            const x = t.parentElement;
+            if (x.style.display === 'none') x.style.display = 'block';
+        });
+
+        let newTargets = [];
+        targets.forEach(t => {
+            if (!t.innerText.toLowerCase().includes(tag.toLowerCase())) {
+                newTargets = [...newTargets, t]
+            }
+        });
+
+        newTargets.forEach(t => {
+            const x = t.parentElement;
+            x.style.display = x.style.display === 'none' ? 'block' : 'none';
+        });
+    }
+</script> *@

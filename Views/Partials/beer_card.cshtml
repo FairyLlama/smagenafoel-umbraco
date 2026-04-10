@@ -10,6 +10,14 @@
     var allContentTags = _tagQuery.GetAllContentTags();
 }
 
+<div class="beer-toggle">
+    | <span class="clickable" onclick="clearSelections()"> Alle </span> |
+    @foreach (var tag in allContentTags)
+    {
+        string passParam = $"'{tag.Text}'";
+        <span class="clickable" onclick="toggleBeerItems(@passParam)"> @tag.Text | </span>
+    }
+</div>
 
 
 <div class="card-container">
@@ -17,7 +25,7 @@
     {
         <div class="beer-card">
             <a href="@item.Url()">
-                <img src="@Url.GetCropUrl(item.MainImage, "BeerThumbnail")" />
+                <img src="@Url.GetCropUrl(item.MainImage, "Thumbnail")" />
             </a>
 
 
@@ -26,18 +34,22 @@
             <p class="beer-tag" data-cats="@String.Join(" ", item.Categories)"> @String.Join(" | ", item.Categories) </p>
         </div>
     }
-    <span class="clickable" onclick="clearSelections()"> Everything </span> |
-    @foreach (var tag in allContentTags)
-    {
-        string passParam = "'" + tag.Text + "'";
-        <span class="clickable" onclick="toggleBeerItems(@passParam)"> @tag.Text </span>
-    }
+
 </div>
 
 
 
 
 <script type="text/javascript">
+    const clearSelections = () => {
+        const targets = document.querySelectorAll('[data-cats]');
+        
+        targets.forEach(t => {
+            if (t.parentElement.style.display === 'none')
+                t.parentElement.style.display = 'block';
+        });
+    };
+
     const toggleBeerItems = (tag) => {
         console.log("blog item toggle for " + tag);
         let targets = document.querySelectorAll('[data-cats]');
@@ -60,10 +72,3 @@
         });
     }
 </script>
-
-@* <div class="beer-card">
-</div>
-<div class="beer-card">
-</div>
-<div class="beer-card">
-</div> *@
