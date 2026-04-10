@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Event Entry</summary>
 	[PublishedModel("eventEntry")]
-	public partial class EventEntry : PublishedContentModel, IColors, IContentProperties, IHeaderProperties, ISeoProperties, ITaggingProperties, IVisibilityProperties
+	public partial class EventEntry : PublishedContentModel, IColors, IContentProperties, IEventProperties, IHeaderProperties, ISeoProperties, ITaggingProperties, IVisibilityProperties
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -88,6 +88,44 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("summary")]
 		public virtual string Summary => global::Umbraco.Cms.Web.Common.PublishedModels.ContentProperties.GetSummary(this, _publishedValueFallback);
+
+		///<summary>
+		/// Event Date End
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
+		[ImplementPropertyType("eventDateEnd")]
+		public virtual global::System.Nullable<global::System.DateTime> EventDateEnd => global::Umbraco.Cms.Web.Common.PublishedModels.EventProperties.GetEventDateEnd(this, _publishedValueFallback);
+
+		///<summary>
+		/// Event Date Start
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
+		[ImplementPropertyType("eventDateStart")]
+		public virtual global::System.Nullable<global::System.DateTime> EventDateStart => global::Umbraco.Cms.Web.Common.PublishedModels.EventProperties.GetEventDateStart(this, _publishedValueFallback);
+
+		///<summary>
+		/// EventPlace
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("eventPlace")]
+		public virtual string EventPlace => global::Umbraco.Cms.Web.Common.PublishedModels.EventProperties.GetEventPlace(this, _publishedValueFallback);
+
+		///<summary>
+		/// Event Price
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("eventPrice")]
+		public virtual string EventPrice => global::Umbraco.Cms.Web.Common.PublishedModels.EventProperties.GetEventPrice(this, _publishedValueFallback);
+
+		///<summary>
+		/// EventRegister
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.2.2+11a412c")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("eventRegister")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString EventRegister => global::Umbraco.Cms.Web.Common.PublishedModels.EventProperties.GetEventRegister(this, _publishedValueFallback);
 
 		///<summary>
 		/// Header Content: Enter the content for the header

@@ -8,11 +8,11 @@
 
 .event-box {
   border: 2px solid var(--color-yellow);
-  width: 15%;
+  width: 25%;
   margin: 3vh auto;
   text-align: center;
-  transform: translateX(5.5vw);
-  max-width: 40%;
+  transform: translateX(8vw);
+  max-width: 20%;
 }
 
 .event-information {
@@ -21,7 +21,7 @@
 }
 
 .event-image {
-  max-width: 450px;
+  max-width: 600px;
   position: absolute;
   transform: translateX(80%);
   top: 27vh;

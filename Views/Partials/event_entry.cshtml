@@ -3,3 +3,17 @@
 @using Umbraco.Cms.Core.Models
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.EventEntry>
 
+<div class="event-entry">
+    <p>@Model.MainContent</p>
+</div>
+
+<div class="event-box">
+    <div class="event-information">
+        <p>Pris: @Model.EventPrice kr</p>
+        <p>Sted: @Model.EventPlace</p>
+        <p>Tilmeldning: @Model.EventRegister</p>
+        <p>Start tidspunkt: @Model.EventDateStart</p>
+        <p>Slut tidspunkt: @Model.EventDateEnd </p>
+    </div>
+</div>
+<img class="event-image" src="@Model.MainImage.Url()" />
