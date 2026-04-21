@@ -1,16 +1,16 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.EventPage>
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Information>
 @inject Umbraco.Cms.Web.Common.UmbracoHelper umbracoHelper
-
 @{
 	Layout = "master.cshtml";
 }
+
 <!DOCTYPE html>
 <html>
 
 
 @await Html.PartialAsync("header")
-@await Html.PartialAsync("event_card")
+@await Html.PartialAsync("~/Views/Partials/information.cshtml")
 
 
 

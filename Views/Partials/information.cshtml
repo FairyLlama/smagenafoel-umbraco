@@ -1,0 +1,9 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Information>
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.PublishedCache
+
+
+<div class="information-box">
+    <p>@Model.MainContent</p>
+    <img class="information-image" src="@Model.MainImage.Url()" />
+</div>

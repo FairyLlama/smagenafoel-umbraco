@@ -1,0 +1,12 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using ViewModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "master.cshtml";
+}
+
+
+@await Html.PartialAsync("header")
+@await Html.PartialAsync("~/Views/Partials/ContactForm.cshtml", new ContactForm())
+
+

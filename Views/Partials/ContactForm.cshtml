@@ -1,0 +1,54 @@
+﻿@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.PublishedCache
+@using Umbraco.Cms.Core.Models
+@using Controllers
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ViewModels.ContactForm>
+
+
+
+
+@if (TempData["success"] == null)
+{
+    @using (Html.BeginUmbracoForm<ContactFormSurfaceController>(nameof(ContactFormSurfaceController.Submit)))
+    {
+
+        <div class="head-form">
+            <p>@Umbraco.GetDictionaryValue("ContactForm")</p>
+        </div>
+        <div class="contact-form">
+            <div>
+                <span class="left-align"><label asp-for="Name">@Umbraco.GetDictionaryValue("Name")</label></span>
+                <span class="right-align"><input asp-for="Name" /></span>
+                @* <span asp-validation-for="Name" class="text-danger"></span> *@
+            </div>
+            <div>
+                <span class="left-align"><label asp-for="Email">E-mail</label></span>
+                <span class="right-align"><input asp-for="Email" /></span>
+                @* <span asp-validation-for="Email" class="text-danger"></span> *@
+            </div>
+            <div>
+                <label asp-for="Subject">@Umbraco.GetDictionaryValue("Subject")</label>
+                <input asp-for="Subject" />
+                @* <span asp-validation-for="Subject" class="text-danger"></span> *@
+            </div>
+            <div>
+                <label asp-for="Message">@Umbraco.GetDictionaryValue("Message")</label>
+                <input asp-for="Message"></input>
+                @* <span asp-validation-for="Message" class="text-danger"></span> *@
+            </div>
+            <br />
+            <input type="submit" name="Submit" value="@Umbraco.GetDictionaryValue("Submit")" />
+        </div>
+
+        <div class="bottom-form">
+            <p>Ellers giv os et kald på +45 50 49 90 12</p>
+        </div>
+    
+    }
+}
+else
+{
+    <div class="contact-form">
+        <p>Tak for at kontakte os. Vi vender tilbage hurtigst muligt!</p>
+    </div>
+}
